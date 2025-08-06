@@ -3,29 +3,25 @@ const pauseButton = document.getElementById('pause-btn');
 const ResetButton = document.getElementById('reset-btn');
 const timerEndSound = new Audio('vine.mp3');
 let timer;
-let initialMinutes = document.getElementById('user-minutes');
-const initialSeconds = document.getElementById('user-seconds');
-let initialTime = parseInt(initialMinutes.value) * 60 + parseInt(initialSeconds.value);
-let timeLeft = initialTime;
-// change text content automatically as time passes
-function updateMinutesDisplay() {
+
+// 2 functions were useless bro,fr, might as well optimize
+function updateDisplay() {
     const minutes = Math.floor(timeLeft/60);
-    document.getElementById('user-minutes').value =
-        `${minutes.toString().padStart(2, '0')}`;
-
-}
-function updateSecondsDisplay() {
     const seconds = timeLeft % 60;
-    document.getElementById('user-seconds').value =
-        `${seconds.toString().padStart(2, '0')}`
+    document.getElementById('user-minutes').value = minutes.toString().padStart(2, '0');
+    document.getElementById('user-seconds').value = seconds.toString().padStart(2, '0')
 }
-
+// want the time to upload  everything rvery time it changes values
 function startTimer() {
+    let initialMinutes = document.getElementById('user-minutes');
+    const minutes = parseInt(initialMinutes.value) * 60;
+    const initialSeconds = document.getElementById('user-seconds');
+    const seconds = (initialSeconds.value);
+    timeLeft = minutes*60 + seconds
     if(timer) clearInterval(timer);
     timer = setInterval(() => {
         timeLeft--;
-        updateMinutesDisplay();
-        updateSecondsDisplay();
+        updateDisplay();
         if(timeLeft<=0){
             clearInterval(timer);
             alert("wake up my G, it's time to take a break. You did good"); // yes, i did put a motivational message here
@@ -39,7 +35,7 @@ function pauseTimer() {
 
 function resetTimer() {
     clearInterval(timer);
-    timeLeft = initialTime
+    timeLeft = 25*60
     updateDisplay();
 }
 
