@@ -42,9 +42,10 @@ body{
     align-items: center;
     justify-content: center;
     height: 30%;
-    width: 30%;
+    width: 40%; /* otherwise the 2nd number gets cut*/
     font-size: clamp(10rem,12rem,15rem);
     border: none;
+    overflow: visible;
 }
 .time:focus{
     border: 2px solid;
@@ -70,4 +71,21 @@ body{
     height: clamp(28rem,38rem,43rem);
     border: 2px solid black;
     border-radius: var(--border-radius);
+}
+
+.progress-bar{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    z-index: 1;
+}
+.progress-fill {
+    position: absolute;
+    right: 0;
+    background: #ffffff;
+    transform-origin: left center;
+    transform: rotate(0deg);
+    transition: transform 0.5s linear;
 }

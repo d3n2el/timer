@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Timer</title>
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
     <div class="time-container">
         <div class="centered-div"> <!-- istg i will make it centered or at least try-->
             <div class="outer-circle">
+                <span class="progress-bar">
+                    <span class="progress-fill"></span>
+                </span>
                 <div class="inner-circle">
                     <input class="time" id="user-minutes"></input>
                     <span class="two-dots">:</span>
                     <input class="time" id="user-seconds"></input>
                 </div>
-            </div>
+            </div>     
         </div>
         <div class="button-container">
             <button class="time-starter" id="time-starter"> Start timer</button>

@@ -3,7 +3,7 @@ const pauseButton = document.getElementById('pause-btn');
 const ResetButton = document.getElementById('reset-btn');
 const timerEndSound = new Audio('vine.mp3');
 let timer;
-
+let timeLeft;
 // 2 functions were useless bro,fr, might as well optimize
 function updateDisplay() {
     const minutes = Math.floor(timeLeft/60);
@@ -17,10 +17,12 @@ function startTimer() {
     const minutes = parseInt(initialMinutes.value) * 60;
     const initialSeconds = document.getElementById('user-seconds');
     const seconds = parseInt(initialSeconds.value);
-    timeLeft = minutes + seconds
+    timeLeft = minutes + seconds;
+    progressFill.style.transform = 'rotate(0deg)';
     if(timer) clearInterval(timer);
     timer = setInterval(() => {
         timeLeft--;
+        const progress = 360 - (timeLeft) *360
         updateDisplay();
         if(timeLeft<=0){
             clearInterval(timer);
