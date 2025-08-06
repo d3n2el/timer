@@ -1,0 +1,42 @@
+:root {
+    --border-radius: 9999999999999999px /* making sure with all the 9s*/
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.time-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.centered-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:var(--border-radius);
+    border-color: black;
+    visibility: visible;
+    border-style: solid;
+    width: clamp(30rem,40rem,45rem);
+    height: clamp(30rem,40rem,45rem);
+}
+.time-starter,
+.pause-btn,
+.reset-btn{
+    border-style: 2px solid;
+    border-color: black;
+    border-radius: 25px;
+    background-color: white;
+    width: clamp(8rem,10rem,12rem);
+    height: clamp(3rem,4rem,5rem);
+}
+.time{
+    font-size: clamp(10rem,12rem,15rem);
+}
