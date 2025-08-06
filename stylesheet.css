@@ -38,5 +38,17 @@ body{
     height: clamp(3rem,4rem,5rem);
 }
 .time{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+    width: 30%;
+    font-size: clamp(10rem,12rem,15rem);
+    border: none;
+}
+.time:focus{
+    border: 2px solid;
+}
+.two-dots{
     font-size: clamp(10rem,12rem,15rem);
 }
