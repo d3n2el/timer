@@ -9,14 +9,18 @@
 <body>
     <div class="time-container">
         <div class="centered-div"> <!-- istg i will make it centered or at least try-->
-            <input class="time" id="user-minutes"></input>
-            <span class="two-dots">:</span>
-            <input class="time" id="user-seconds"></input>
+            <div class="outer-circle">
+                <div class="inner-circle">
+                    <input class="time" id="user-minutes"></input>
+                    <span class="two-dots">:</span>
+                    <input class="time" id="user-seconds"></input>
+                </div>
+            </div>
         </div>
         <div class="button-container">
             <button class="time-starter" id="time-starter"> Start timer</button>
             <button class="pause-btn" id="pause-btn">Pause timer</button>
-            <button class="reset-btn" id="reset-btn"> Reset timer</button>
+            <button class="reset-btn" id="reset-btn"> Set Standard Pomodoro</button>
         </div>
     </div>
     <audio id="timer-end-sound" src="vine.mp3"></audio> 

@@ -16,16 +16,18 @@ function startTimer() {
     let initialMinutes = document.getElementById('user-minutes');
     const minutes = parseInt(initialMinutes.value) * 60;
     const initialSeconds = document.getElementById('user-seconds');
-    const seconds = (initialSeconds.value);
-    timeLeft = minutes*60 + seconds
+    const seconds = parseInt(initialSeconds.value);
+    timeLeft = minutes + seconds
     if(timer) clearInterval(timer);
     timer = setInterval(() => {
         timeLeft--;
         updateDisplay();
         if(timeLeft<=0){
             clearInterval(timer);
-            alert("wake up my G, it's time to take a break. You did good"); // yes, i did put a motivational message here
+            // changed order so you first hear sound and then alert
             timerEndSound.play();
+            alert("wake up my G, it's time to take a break. You did good"); // yes, i did put a motivational message here
+            
         }
     }, 1000);
 }

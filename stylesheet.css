@@ -52,3 +52,22 @@ body{
 .two-dots{
     font-size: clamp(10rem,12rem,15rem);
 }
+
+.outer-circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(30rem,40rem,45rem);
+    height: clamp(30rem,40rem,45rem);
+    border: 2px solid black;
+    border-radius: var(--border-radius);
+}
+.inner-circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(28rem,38rem,43rem);
+    height: clamp(28rem,38rem,43rem);
+    border: 2px solid black;
+    border-radius: var(--border-radius);
+}
