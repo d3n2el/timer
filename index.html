@@ -14,9 +14,10 @@
                     <span class="progress-fill"></span>
                 </span>
                 <div class="inner-circle">
-                    <input class="time" id="user-minutes"></input>
+                    <!-- put min and max to avoid headaches and be accurate with time-->
+                    <input class="time" id="user-minutes" type="number" min="0" max="59"></input>
                     <span class="two-dots">:</span>
-                    <input class="time" id="user-seconds"></input>
+                    <input class="time" id="user-seconds" type="number" min="0" max="59"></input>
                 </div>
             </div>     
         </div>
